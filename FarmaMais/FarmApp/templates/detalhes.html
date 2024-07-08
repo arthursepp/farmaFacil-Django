@@ -1,0 +1,14 @@
+{% extends 'master.html' %} {% block title %}
+  Detalhes
+{% endblock %}
+
+{% block content %}
+<h2>{{ produto.nome }}</h2>
+
+<p>EAN: {{ produto.ean }}</p>
+<p>Preço: {{ produto.preco }}</p>
+<p>Quantidade: {{ produto.quantidade }}</p>
+<p>dosagem: {{ produto.dosagem }}</p>
+<p>Estoque: {{ produto.estoque }}</p>
+
+{% endblock %}

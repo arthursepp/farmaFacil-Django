@@ -1,0 +1,162 @@
+{% extends 'master.html' %} {% block title %} Cadastro de farmácia {% endblock%}
+
+{% block content %}
+
+<style>
+  .main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Faz o contêiner pai ocupar no mínimo a altura total da tela */
+  }
+  .form {
+    max-width: 500px;
+    margin: auto; /* Centraliza horizontalmente */
+    display: flex;
+    flex-direction: column;
+  }
+</style>
+
+<div class="w3-container" style="margin-top: 70px; margin-bottom: 20px">
+  <div class="w3-center w3-padding">
+    <h3>Cadastro de farmácia</h3>
+  </div>
+
+  <div class="main">
+    <form action="/cadastroFarmacia/" method="post">
+      {% csrf_token %}
+      <div class="w3-container w3-padding w3-border form">
+        <div class="w3-container">
+          <span>Nome:</span>
+          <br />
+          <input
+            type="text"
+            class="w3-input w3-border w3-border-black"
+            name="nome"
+            id=""
+            maxlength="100"
+            minlength="30"
+            required
+          />
+        </div>
+        <br />
+
+        <div class="w3-container">
+          <span>Telefone:</span>
+          <br />
+          <input
+            type="tel"
+            class="w3-input w3-border w3-border-black"
+            name="telefone"
+            id=""
+            maxlength="15"
+            minlength="15"
+            required
+          />
+        </div>
+        <br />
+
+        <div class="w3-container">
+          <span>E-mail</span>
+          <br />
+          <input
+            type="email"
+            class="w3-input w3-border w3-border-black"
+            name="email"
+            id=""
+            maxlength="100"
+            minlength="30"
+            required
+          />
+        </div>
+        <br />
+
+        <div class="w3-container">
+          <span>CNPJ:</span>
+          <br />
+          <input
+            type="text"
+            class="w3-input w3-border w3-border-black"
+            name="cnpj"
+            id=""
+            maxlength="14"
+            minlength="14"
+            required
+          />
+        </div>
+        <br />
+
+        <div class="w3-container">
+          <span>CEP:</span>
+          <br />
+          <input
+            type="text"
+            class="w3-input w3-border w3-border-black"
+            name="cep"
+            id=""
+            maxlength="8"
+            minlength="8"
+            required
+          />
+        </div>
+        <br />
+
+        <div class="w3-container">
+          <span>Endereço:</span>
+          <br />
+          <input
+            type="text"
+            class="w3-input w3-border w3-border-black"
+            name="endereco"
+            id=""
+            maxlength="100"
+            minlength="30"
+            required
+          />
+        </div>
+        <br />
+
+        <div class="w3-container">
+          <span>Senha:</span>
+          <br />
+          <input
+            type="password"
+            class="w3-input w3-border w3-border-black"
+            name="senha"
+            id=""
+            maxlength="20"
+            minlength="8"
+            required
+          />
+        </div>
+        <br />
+
+        <div class="w3-container">
+          <span>Confirme a senha:</span>
+          <br />
+          <input
+            type="password"
+            class="w3-input w3-border w3-border-black"
+            name=""
+            id=""
+            maxlength="20"
+            minlength="8"
+            required
+          />
+        </div>
+        <br />
+
+        <div class="w3-container w3-center">
+          <button type="submit" class="w3-button w3-blue">Enviar</button>
+          <br />
+          <p>
+            Já possui uma conta? Clique
+            <a href="/login" style="color: blue">aqui</a>
+          </p>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
