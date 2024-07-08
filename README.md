@@ -12,7 +12,7 @@ Primeiramente, verifique se o Python se encontra instalado em sua máquina.
 
 Use este comando em um terminal (cmd) para fazer a verificação:
 
-<div style="background-color: #000; color: #FFF; padding: 10px; font-family: consolas">
+<div style="background-color: #000; color: #FFF; padding: 10px; font-family: consolas; border: 2px solid #FFF;">
     python --version
 </div>
 <br>
@@ -27,7 +27,7 @@ Caso contrário, acesse [o site do python](python.org) e instale-o.
 O pip é o gerenciador de pacotes do Python. Precisaremos dele para instalar o Django.
 Geralmente, o pip já vem em conjunto do Python em sua instalação, mas, caso você queira sanar suas dúvidas, ou verificar se você está na última versão, use este comando em um terminal:
 
-<div style="background-color: #000; color: #FFF; padding: 10px; font-family: consolas">
+<div style="background-color: #000; color: #FFF; padding: 10px; font-family: consolas; border: 2px solid #FFF;">
     pip --version
 </div>
 <br>
@@ -41,7 +41,7 @@ Django é uma framework do Python que cria, de forma automática, uma boa parte 
 
 Ele não vem junto do Python. Deve ser instalado com este comando:
 
-<div style="background-color: #000; color: #FFF; padding: 10px; font-family: consolas">
+<div style="background-color: #000; color: #FFF; padding: 10px; font-family: consolas; border: 2px solid #FFF;">
     pip install django
 </div>
 
@@ -59,7 +59,7 @@ Quando instaladas dentro da venv, elas não serão colocadas diretamente no seu 
 
 Crie uma venv usando este comando:
 
-<div style="background-color: #000; color: #FFF; padding: 10px; font-family: consolas">
+<div style="background-color: #000; color: #FFF; padding: 10px; font-family: consolas; border: 2px solid #FFF;">
     python -m venv nome_da_venv
 </div>
 <br>
@@ -68,7 +68,7 @@ Em seguida, você notará a criação de uma pasta com o nome que você informou
 
 #### Ativando a venv:
 Para fazer com que a venv abrigue suas bibliotecas, utilize este comando:
-<div style="background-color: #000; color: #FFF; padding: 10px; font-family: consolas">
+<div style="background-color: #000; color: #FFF; padding: 10px; font-family: consolas; border: 2px solid #FFF;">
     nome_da_venv/Scripts/activate
 </div>
 <br>
@@ -79,7 +79,7 @@ Abaixo, um exemplo de como identificar que a venv foi ativada:
 ![alt text](image.png)
 
 Para desativar a venv, use o comando abaixo:
-<div style="background-color: #000; color: #FFF; padding: 10px; font-family: consolas">
+<div style="background-color: #000; color: #FFF; padding: 10px; font-family: consolas; border: 2px solid #FFF;">
     deactivate
 </div>
 <hr>
