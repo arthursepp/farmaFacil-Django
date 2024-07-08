@@ -1,12 +1,24 @@
 import uuid
-from django.core.mail import send_mail
+from django.core.mail import send_mail as django_send_mail
+import random
 
-def generate_hex_code():
-    return uuid.uuid4().hex
+def gerar_codigo():
+    codigo = random.randint(0x1000, 0xFFFF)
 
-def send_verification_email(email, code):
-    subject = 'Verificação de Cadastro'
-    message = f'Seu código de verificação é: {code}'
-    email_from = 'noreply@seuprojeto.com'
-    recipient_list = [email,]
-    send_mail(subject, message, email_from, recipient_list)
+    codigo = format(codigo, '04X')
+
+    print(codigo)
+    return codigo
+
+codigo = gerar_codigo()
+
+def send_verification(codigo):
+    django_send_mail(
+        'Código de verificação',
+        f'Seu código de verificação é: {codigo}',
+        'arthursouzasepp@gmail.com',
+        ['to@example.com'],
+        fail_silently=False,
+    )
+
+send_verification(codigo)
