@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import loader
 from .models import Usuario, Farmacia, Produto
+from .utils import generate_hex_code, send_verification_email
 
 # Create your views here.
 def home(request):
@@ -13,21 +14,16 @@ def login(request):
     template = loader.get_template('login.html')
     return HttpResponse(template.render())
 
+
 def cadastro(request):  
-    # template = loader.get_template('cadastro.html')
-    # return HttpResponse(template.render())
     if request.method == 'POST':
-        nome = request.POST.get('nome')
-        email = request.POST.get('email')
-        cpf = request.POST.get('cpf')
-        dataNasc = request.POST.get('dataNasc')
-        endereco = request.POST.get('endereco')
-        complemento = request.POST.get('complemento')
-        cep = request.POST.get('cep')
-        senha = request.POST.get('senha')
-        
+        # Código existente para coletar dados do formulário e salvar o usuário
         usuario = Usuario(nome=nome, email=email, cpf=cpf, dataNasc=dataNasc, endereco=endereco, complemento=complemento, cep=cep, senha=senha)
         usuario.save()
+        
+        # Gere um código de verificação e envie o e-mail
+        code = generate_hex_code()
+        send_verification_email(email, code)
         
         return redirect('login')
     else:
