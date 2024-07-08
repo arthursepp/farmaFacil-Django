@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import loader
 from .models import Usuario, Farmacia, Produto
+from .utils import gerar_codigo, send_verification
 
 # Create your views here.
 def home(request):
@@ -28,6 +29,12 @@ def cadastro(request):
         
         usuario = Usuario(nome=nome, email=email, cpf=cpf, dataNasc=dataNasc, endereco=endereco, complemento=complemento, cep=cep, senha=senha)
         usuario.save()
+        
+        # Gere um código de verificação ou utilize algum atributo único do usuário como código
+        codigo_verificacao = "SeuCodigoAqui"
+        
+        # Chame a função send_verification_email
+        send_verification_email(email, codigo_verificacao)
         
         return redirect('login')
     else:
