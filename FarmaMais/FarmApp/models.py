@@ -11,6 +11,7 @@ class Usuario(models.Model):
     complemento = models.CharField(max_length=100, null=True, blank=True, default='Not provided')
     cep = models.CharField(max_length=8)
     senha = (models.CharField(max_length=20))
+    validado = (models.BooleanField(default=False))  
     
     def __str__(self) -> str:
         return self.nome
