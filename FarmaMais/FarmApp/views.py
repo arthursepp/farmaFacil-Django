@@ -17,6 +17,14 @@ def login(request):
 
 def cadastro(request):  
     if request.method == 'POST':
+        nome = request.POST.get('nome')
+        email = request.POST.get('email')
+        cpf = request.POST.get('cpf')
+        dataNasc = request.POST.get('dataNasc')
+        endereco = request.POST.get('endereco')
+        complemento = request.POST.get('complemento')
+        cep = request.POST.get('cep')
+        senha = request.POST.get('senha')
         # Código existente para coletar dados do formulário e salvar o usuário
         usuario = Usuario(nome=nome, email=email, cpf=cpf, dataNasc=dataNasc, endereco=endereco, complemento=complemento, cep=cep, senha=senha)
         usuario.save()
